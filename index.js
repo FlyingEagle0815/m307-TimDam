@@ -21,3 +21,10 @@ app.get("/impressum", async function (req, res) {
 app.listen(3010, () => {
   console.log(`Example app listening at http://localhost:3010`);
 });
+
+const bbz307 = require("bbz307");
+const login = new bbz307.Login(
+  "users",
+  ["username", "password", "image_url"],
+  pool
+);
