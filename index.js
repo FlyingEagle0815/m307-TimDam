@@ -1,13 +1,13 @@
 import { createApp } from "./config.js";
 
 const app = createApp({
-  user: "autumn_star_7622",
-  host: "168.119.168.41",
-  database: "demo",
-  password: "uaioysdfjoysfdf",
-  port: 18324,
+  user: "timdam",
+  host: "bbz.cloud",
+  database: "timdam",
+  password: "S_Y:4n*+7$yuKX!w",
+  port: 30211,
 });
-
+6;
 /* Startseite */
 app.get("/", async function (req, res) {
   res.render("start", {});
@@ -23,8 +23,3 @@ app.listen(3010, () => {
 });
 
 const bbz307 = require("bbz307");
-const login = new bbz307.Login(
-  "users",
-  ["username", "password", "image_url"],
-  pool
-);
