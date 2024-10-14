@@ -19,6 +19,38 @@ export function createApp(dbconfig) {
     pool
   );
 
+  // REGISTER
+  app.get("/register", (req, res) => {
+    res.render("register");
+  });
+
+  app.post("/register", upload.none(), async (req, res) => {
+    const user = await login.registerUser(req);
+    if (user) {
+      res.redirect("/login");
+      return;
+    } else {
+      res.redirect("/register");
+      return;
+    }
+  });
+
+  // LOGIN
+  app.get("/login", (req, res) => {
+    res.render("login");
+  });
+
+  app.post("/login", upload.none(), async (req, res) => {
+    const user = await login.loginUser(req);
+    if (!user) {
+      res.redirect("/login");
+      return;
+    } else {
+      res.redirect("/intern");
+      return;
+    }
+  });
+
   app.engine("handlebars", engine());
   app.set("view engine", "handlebars");
   app.set("views", "./views");

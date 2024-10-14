@@ -1,9 +1,71 @@
 * {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
-header,
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222222;
+}
+
+/* LOGO */
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* NAVIGATION */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.current-page {
+  font-weight: 900;
+}
+
+/* FOOTER */
 footer {
-  background-color: lightblue;
-  padding: 12px;
+  background-color: #222222;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer p,
+footer p a {
+  color: #ffffff;
+  text-decoration: none;
+  text-align: right;
+}
+
+/* HOME */
+.title-main {
+  font-size: 82px;
+  font-weight: 900;
+  line-height: 90px;
+}
+
+.title-description {
+  font-size: 26px;
+  font-weight: 300;
 }
