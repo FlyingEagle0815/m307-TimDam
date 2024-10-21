@@ -1,4 +1,4 @@
-import { createApp } from "./config.js";
+import { createApp, upload } from "./config.js";
 
 const app = createApp({
   user: "timdam",
@@ -8,11 +8,27 @@ const app = createApp({
   port: 30211,
 });
 6;
-/* Startseite */
+
+// Startseite
 app.get("/", async function (req, res) {
   res.render("start", {});
 });
 
+// Image-Upload
+app.get("/new_post", async function (req, res) {
+  res.render("new_post", {});
+});
+
+app.post("/create_post", upload.single("image"), async function (req, res) {
+  const result = await app.locals.pool.query(
+    "INSERT INTO todos (text, dateiname) VALUES ($1, $2)",
+    [req.body.text, req.file.filename]
+  );
+  console.log(result);
+  res.redirect("/");
+});
+
+// Impressum
 app.get("/impressum", async function (req, res) {
   res.render("impressum", {});
 });

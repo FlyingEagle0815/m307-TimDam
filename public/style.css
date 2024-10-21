@@ -2,6 +2,10 @@
   font-family: "Mulish", sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 p,
 a,
 h1,
@@ -11,6 +15,14 @@ h4,
 h5,
 h6 {
   color: #222222;
+}
+
+.left-page-margin {
+  margin-left: 150px;
+}
+
+.right-page-margin {
+  margin-right: 150px;
 }
 
 /* LOGO */
@@ -24,6 +36,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 60px;
 }
 
 /* NAVIGATION */
@@ -42,6 +55,10 @@ nav ul li a {
   font-weight: 900;
 }
 
+.nav-margin {
+  margin-left: 50px;
+}
+
 /* FOOTER */
 footer {
   background-color: #222222;
@@ -49,6 +66,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  height: 180px;
 }
 
 footer p,
@@ -68,4 +86,25 @@ footer p a {
 .title-description {
   font-size: 26px;
   font-weight: 300;
+  margin-bottom: 60px;
+}
+
+.intro-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Button */
+button {
+  font-size: 20px;
+  font-weight: 900;
+  width: 275px;
+  height: 55px;
+  border-radius: 100px;
+  border: #222222 2px solid;
+  background-color: transparent;
+}
+
+button a {
+  text-decoration: none;
 }
