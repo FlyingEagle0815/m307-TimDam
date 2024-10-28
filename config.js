@@ -40,6 +40,16 @@ export function createApp(dbconfig) {
     res.render("login");
   });
 
+  // ROUTES
+  app.get("/routes", (req, res) => {
+    res.render("routes");
+  });
+
+  // START
+  app.get("/start", (req, res) => {
+    res.render("start");
+  });
+
   app.post("/login", upload.none(), async (req, res) => {
     const user = await login.loginUser(req);
     if (!user) {

@@ -17,6 +17,17 @@ h6 {
   color: #222222;
 }
 
+h2 {
+  font-size: 42px;
+  font-weight: 900;
+}
+
+hr {
+  height: 2px;
+  background-color: #222222;
+  border-radius: 10px;
+}
+
 .left-page-margin {
   margin-left: 150px;
 }
@@ -74,6 +85,11 @@ footer p a {
   color: #ffffff;
   text-decoration: none;
   text-align: right;
+  margin: 0;
+}
+
+footer .copyright-footer {
+  margin-top: 5px;
 }
 
 /* HOME */
@@ -94,6 +110,16 @@ footer p a {
   height: auto;
 }
 
+/* Routes */
+.routes-buttons {
+}
+
+.routes-titles {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+}
+
 /* Button */
 button {
   font-size: 20px;
@@ -107,4 +133,18 @@ button {
 
 button a {
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.solid {
+  background-color: #222222;
+}
+
+.solid a {
+  color: #ffffff;
+}
+
+.icon-button svg {
+  margin-right: 15px;
 }
