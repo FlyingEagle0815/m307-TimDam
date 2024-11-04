@@ -1,0 +1,31 @@
+<!-- HEADER -->
+{{> header}}
+
+<div class="form-complete">
+  <!-- TITEL -->
+  <h1>Login</h1>
+
+  <!-- FORMULAR -->
+  <form action="/login" enctype="multipart/form-data" method="post">
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Your username"/><br/>
+
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Your password"/><br/>
+    <input class="label-button solid" type="submit" value="→ LOGIN"/>
+  </form>
+
+  <!-- SPLIT -->
+  <div class="form-split">
+    <p>or</p>
+  </div>
+
+  <!-- SIGN UP -->
+  <a class="form-text-secondary" href="register">SIGN UP</a>
+</div>
+
+<!-- HINTERGRUNDBILD -->
+<img class="intro-image" src="intro-image-shadow.jpg" alt="Hintergrundbild mit grossem Berg"></div>
+
+<!-- FOOTER -->
+{{> footer}}

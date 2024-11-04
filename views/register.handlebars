@@ -1,0 +1,29 @@
+<!-- HEADER -->
+{{> header}}
+
+<div class="form-complete">
+  <!-- TITEL -->
+  <h1>Register</h1>
+
+  <!-- FORMULAR -->
+  <form action="/register" enctype="multipart/form-data" method="post">
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Your username"/>
+
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Your password"/>
+
+    <label>E-Mail</label>
+    <input type="email" name="email" placeholder="Your e-mail"/>
+    <input class="label-button solid" type="submit" value="→ SIGN UP"/>
+  </form>
+
+  <!-- SIGN UP -->
+  <a class="form-text-secondary" href="login">RETURN</a>
+</div>
+
+<!-- HINTERGRUNDBILD -->
+<img class="intro-image" src="intro-image-shadow.jpg" alt="Hintergrundbild mit grossem Berg"></div>
+
+<!-- FOOTER -->
+{{> footer}}

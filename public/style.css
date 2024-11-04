@@ -23,7 +23,7 @@ h2 {
 }
 
 hr {
-  height: 2px;
+  height: 1px;
   background-color: #222222;
   border-radius: 10px;
 }
@@ -110,7 +110,7 @@ footer .copyright-footer {
   height: auto;
 }
 
-/* Routes */
+/* ROUTES */
 .routes-buttons {
 }
 
@@ -120,8 +120,64 @@ footer .copyright-footer {
   justify-content: space-between;
 }
 
-/* Button */
-button {
+/* FORM */
+.form-complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 700px;
+  width: 590px;
+  border: #333333 2px solid;
+  border-radius: 20px;
+}
+
+.form-complete form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-complete h1 {
+  font-size: 42px;
+  font-weight: 900;
+  color: #333333;
+  margin: 60px 0 70px 0;
+}
+
+.form-complete label {
+  font-size: 20px;
+  font-weight: 900;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+/* .form-complete input {
+  margin-bottom: 50px;
+} */
+
+.form-complete input::placeholder {
+  font-size: 20px;
+  font-weight: 300;
+  color: #9e9e9e;
+}
+
+.form-text-secondary {
+  font-size: 20px;
+  font-weight: 900;
+  color: #333333;
+  text-decoration: none;
+}
+
+.form-split p {
+  font-size: 20px;
+  font-weight: 300;
+  color: #9e9e9e;
+}
+
+/* BUTTON */
+button,
+.label-button {
   font-size: 20px;
   font-weight: 900;
   width: 275px;
@@ -139,6 +195,7 @@ button a {
 
 .solid {
   background-color: #222222;
+  color: #ffffff;
 }
 
 .solid a {
