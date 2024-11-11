@@ -111,13 +111,26 @@ footer .copyright-footer {
 }
 
 /* ROUTES */
-.routes-buttons {
+.routes-hero {
+  margin-bottom: 70px;
 }
 
-.routes-titles {
+.title-routes {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 62px;
+  /* color: #ffffff; */
+}
+
+.routes-buttons {
   display: flex;
-  flex: row;
+  flex-direction: row;
   justify-content: space-between;
+  margin: 70px 0px;
+}
+
+.routes-intro-text {
+  margin-bottom: 70px;
 }
 
 /* FORM */

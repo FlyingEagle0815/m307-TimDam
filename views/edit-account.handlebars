@@ -1,0 +1,29 @@
+<!-- HEADER -->
+{{> header}}
+
+<div class="form-complete">
+  <!-- TITEL -->
+  <h1>Edit Account</h1>
+
+  <!-- FORMULAR -->
+  <form action="/register" enctype="multipart/form-data" method="post">
+    <label>Username</label>
+    <input type="text" name="username" placeholder="*USERNAME*"/>
+
+    <label>Password</label>
+    <input type="password" name="password" placeholder="*PASSWORD*"/>
+
+    <label>E-Mail</label>
+    <input type="email" name="email" placeholder="*E-MAIL*"/>
+    <input class="label-button solid" type="submit" value="→ UPDATE"/>
+  </form>
+
+  <!-- DELETE ACCOUNT -->
+  <a class="form-text-secondary" href="/login">DELETE ACCOUNT</a>
+</div>
+
+<!-- HINTERGRUNDBILD -->
+<img class="intro-image" src="intro-image-shadow.jpg" alt="Hintergrundbild mit grossem Berg"></div>
+
+<!-- FOOTER -->
+{{> footer}}

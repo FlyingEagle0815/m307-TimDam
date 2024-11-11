@@ -40,6 +40,16 @@ export function createApp(dbconfig) {
     res.render("login");
   });
 
+  // ACCOUNT
+  app.get("/account", (req, res) => {
+    res.render("account");
+  });
+
+  // EDIT-ACCOUNT
+  app.get("/edit-account", (req, res) => {
+    res.render("edit-account");
+  });
+
   // ROUTES
   app.get("/routes", (req, res) => {
     res.render("routes");
