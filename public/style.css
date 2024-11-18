@@ -22,6 +22,13 @@ h2 {
   font-weight: 900;
 }
 
+h3 {
+  font-size: 32px;
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+}
+
 hr {
   height: 1px;
   background-color: #222222;
@@ -131,6 +138,56 @@ footer .copyright-footer {
 
 .routes-intro-text {
   margin-bottom: 70px;
+}
+
+.routes-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 450px;
+  width: 355px;
+  border: #333333 2px solid;
+  border-radius: 30px;
+}
+
+.card-img {
+  margin: 15px;
+  border-radius: 20px;
+}
+
+.card-title {
+  margin-top: 10px;
+}
+
+.card-desc {
+  margin-bottom: 25px;
+}
+
+.card-button {
+  margin-bottom: 35px;
+}
+
+/* ROUTE */
+.route-info-bar {
+  background-color: #333333;
+}
+
+.route-info-bar-group {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.route-info-bar-group p {
+  color: #ffffff;
+}
+
+.text-info-bar {
+  font-size: 20px;
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
 }
 
 /* FORM */

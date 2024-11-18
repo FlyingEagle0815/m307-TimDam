@@ -15,8 +15,17 @@ export function createApp(dbconfig) {
 
   const login = new bbz307.Login(
     "users",
-    ["username", "password", "image_url"],
+    ["username", "password", "email", "image_url"],
     pool
+  );
+
+  app.use(
+    sessions({
+      secret: "thisismysecrctekeyfhrgfgrfrty84fwir768",
+      saveUninitialized: true,
+      cookie: { maxAge: 86400000, secure: false },
+      resave: false,
+    })
   );
 
   // REGISTER
@@ -27,7 +36,7 @@ export function createApp(dbconfig) {
   app.post("/register", upload.none(), async (req, res) => {
     const user = await login.registerUser(req);
     if (user) {
-      res.redirect("/login");
+      res.redirect("/account");
       return;
     } else {
       res.redirect("/register");
@@ -38,6 +47,11 @@ export function createApp(dbconfig) {
   // LOGIN
   app.get("/login", (req, res) => {
     res.render("login");
+  });
+
+  // LOGOUT
+  app.get("/logout", (req, res) => {
+    res.render("logout");
   });
 
   // ACCOUNT
@@ -55,6 +69,11 @@ export function createApp(dbconfig) {
     res.render("routes");
   });
 
+  // FIVE LAKES
+  app.get("/five-lakes", (req, res) => {
+    res.render("five-lakes");
+  });
+
   // START
   app.get("/start", (req, res) => {
     res.render("start");
@@ -66,10 +85,20 @@ export function createApp(dbconfig) {
       res.redirect("/login");
       return;
     } else {
-      res.redirect("/intern");
+      res.redirect("/account");
       return;
     }
   });
+
+  app.get("/logout"),
+    async function (req, res) {
+      const user = await login.loggedInUser(req);
+      if (!user) {
+        res.redirect("/login");
+        return;
+      }
+      res.clearCookie("connect.sid");
+    };
 
   app.engine("handlebars", engine());
   app.set("view engine", "handlebars");
@@ -78,15 +107,6 @@ export function createApp(dbconfig) {
   app.use(express.static("public"));
   app.use(express.urlencoded({ extended: true }));
   app.use(cookieParser());
-
-  app.use(
-    sessions({
-      secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
-      saveUninitialized: true,
-      cookie: { maxAge: 86400000, secure: false },
-      resave: false,
-    })
-  );
 
   app.locals.pool = pool;
 
