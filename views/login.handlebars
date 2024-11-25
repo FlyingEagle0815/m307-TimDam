@@ -1,3 +1,6 @@
+<!-- CSS -->
+<style>.current-page-account { font-weight: 900; }</style>
+
 <!-- HEADER -->
 {{> header}}
 
@@ -8,13 +11,17 @@
   <!-- FORMULAR -->
   <form action="/login" enctype="multipart/form-data" method="post">
     <label>Username</label>
-    <input type="text" name="username" placeholder="Your username"/><br/>
+    <input type="text" name="username" placeholder="Your username" required/><br/>
 
     <label>Password</label>
-    <input type="password" name="password" placeholder="Your password"/><br/>
+    <input type="password" name="password" placeholder="Your password" required/><br/>
 
     <label>E-Mail</label>
-    <input type="email" name="email" placeholder="Your e-mail"/>
+    <input type="email" name="email" placeholder="Your e-mail" required/>
+
+    <!-- <label>Profile-Picture</label>
+    <a href="/new_post">Upload</a> -->
+
     <input class="label-button solid" type="submit" value="→ LOGIN"/>
   </form>
 

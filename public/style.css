@@ -84,10 +84,6 @@ nav ul li a {
   font-size: 20px;
 }
 
-.current-page {
-  font-weight: 900;
-}
-
 .nav-margin {
   margin-left: 50px;
 }
@@ -164,6 +160,7 @@ footer .copyright-footer {
   width: 355px;
   border: #333333 2px solid;
   border-radius: 30px;
+  margin-bottom: 75px;
 }
 
 .card-img {
@@ -240,6 +237,14 @@ footer .copyright-footer {
 .text-image-group figcaption {
   margin-top: 12px;
 }
+
+.return-button {
+  display: flex;
+  justify-content: end;
+  margin: 75px 0;
+}
+
+/* ACCOUNT */
 
 /* FORM */
 .form-complete {

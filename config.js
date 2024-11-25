@@ -55,13 +55,23 @@ export function createApp(dbconfig) {
   });
 
   // ACCOUNT
-  app.get("/account", (req, res) => {
+  app.get("/account", async (req, res) => {
+    const user = await login.loggedInUser(req);
+    if (!user) {
+      res.redirect("/login");
+      return;
+    }
     res.render("account");
   });
 
   // EDIT-ACCOUNT
   app.get("/edit-account", (req, res) => {
     res.render("edit-account");
+  });
+
+  // NEW POST
+  app.get("/new_post", (req, res) => {
+    res.render("new_post");
   });
 
   // ROUTES
