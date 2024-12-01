@@ -89,6 +89,15 @@ export function createApp(dbconfig) {
     res.render("start");
   });
 
+  // UPDATE
+  app.post("/update-account", upload.none(), async function (rec, res) {
+    await pool.query(
+      "UPDATE users SET username=$1, password=$2, email=$3 WHERE id=$4",
+      [req.body.username, req.body.password, req.body.email, req.body.id]
+    );
+    res.redirect("/account");
+  });
+
   app.post("/login", upload.none(), async (req, res) => {
     const user = await login.loginUser(req);
     if (!user) {

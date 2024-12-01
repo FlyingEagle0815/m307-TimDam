@@ -9,20 +9,28 @@
   <h1>Edit Account</h1>
 
   <!-- FORMULAR -->
-  <form action="/register" enctype="multipart/form-data" method="post">
+  <form action="/update-account" enctype="multipart/form-data" method="post">
     <label>Username</label>
-    <input type="text" name="username" placeholder="*USERNAME*"/>
+    <input type="text" name="username" value="{{users.username}}"/>
 
     <label>Password</label>
-    <input type="password" name="password" placeholder="*PASSWORD*"/>
+    <input type="password" name="password" value="{{users.password}}"/>
 
     <label>E-Mail</label>
-    <input type="email" name="email" placeholder="*E-MAIL*"/>
-    <input class="label-button solid" type="submit" value="→ UPDATE"/>
+    <input type="email" name="email" value="{{users.email}}"/>
+
+    <!-- HIDDEN INPUT -->
+    <input type="hidden" name="id" value="{{users.id}}">
+
+    <button class="solid" type="submit">→ UPDATE</button>
+    <!-- <input class="label-button solid" type="submit" value="→ UPDATE"/> -->
   </form>
 
+  <!-- RETURN -->
+  <button><a href="/account">← RETURN</a></button>
+
   <!-- DELETE ACCOUNT -->
-  <a class="form-text-secondary" href="/login">DELETE ACCOUNT</a>
+  <a href="/delete-account/{{id}}">DELETE ACCOUNT</a>
 </div>
 
 <!-- HINTERGRUNDBILD -->
