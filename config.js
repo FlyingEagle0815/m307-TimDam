@@ -65,8 +65,27 @@ export function createApp(dbconfig) {
   });
 
   // EDIT-ACCOUNT
-  app.get("/edit-account", (req, res) => {
-    res.render("edit-account");
+  // app.get("/edit-account", async (req, res) => {
+  //   const users = await pool.query("SELECT * FROM users WHERE id=$1", [
+  //     req.params.id,
+  //   ]);
+  //   res.render("edit-account", { users: users.rows[0] });
+  // });
+
+  app.get("/edit-account", async function (req, res) {
+    const user = await login.loggedInUser(req);
+    if (!user) {
+      res.redirect("/login");
+      return;
+    }
+    const userinfo = await pool.query("SELECT * FROM users where id=$1", [
+      user.id,
+    ]);
+    res.render("edit-account", {
+      user: user,
+      users: users.rows[0],
+      userLoggedIn: true,
+    });
   });
 
   // NEW POST
