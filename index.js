@@ -7,7 +7,6 @@ const app = createApp({
   password: "S_Y:4n*+7$yuKX!w",
   port: 30211,
 });
-6;
 
 // Startseite
 app.get("/", async function (req, res) {
@@ -42,11 +41,6 @@ app.post("/create_post", upload.single("image"), async function (req, res) {
   );
   console.log(result);
   res.redirect("/");
-});
-
-// Impressum
-app.get("/impressum", async function (req, res) {
-  res.render("impressum", {});
 });
 
 /* Wichtig! Diese Zeilen müssen immer am Schluss der Website stehen! */

@@ -151,6 +151,11 @@ footer .copyright-footer {
   margin-bottom: 70px;
 }
 
+.routes-intro-image {
+  width: 100vw;
+  height: auto;
+}
+
 .routes-card {
   display: flex;
   flex-direction: column;
