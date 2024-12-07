@@ -34,14 +34,28 @@ app.get("/delete-account/:id", async function (res, req) {
   res.redirect("/account");
 });
 
-app.post("/create_post", upload.single("image"), async function (req, res) {
-  const result = await app.locals.pool.query(
-    "INSERT INTO todos (text, dateiname) VALUES ($1, $2)",
-    [req.body.text, req.file.filename]
+// FAVORITES 123
+app.post("/favorite/:id", async function (req, res) {
+  const user = await login.loggedInUser(req);
+  if (!user) {
+    res.redirect("/login");
+    return;
+  }
+  await app.locals.pool.query(
+    "INSERT INTO favorites (route_id, user_id) VALUES ($1, $2)",
+    [req.params.id, user.id]
   );
-  console.log(result);
-  res.redirect("/");
+  res.redirect("/routes");
 });
+
+// app.post("/create_post", upload.single("image"), async function (req, res) {
+//   const result = await app.locals.pool.query(
+//     "INSERT INTO todos (text, dateiname) VALUES ($1, $2)",
+//     [req.body.text, req.file.filename]
+//   );
+//   console.log(result);
+//   res.redirect("/");
+// });
 
 /* Wichtig! Diese Zeilen müssen immer am Schluss der Website stehen! */
 app.listen(3010, () => {

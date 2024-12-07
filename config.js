@@ -98,6 +98,11 @@ export function createApp(dbconfig) {
     res.render("routes");
   });
 
+  // FAVORITES 123
+  app.get("/favorite", (req, res) => {
+    res.render("favorite");
+  });
+
   // FIVE LAKES
   app.get("/five-lakes", (req, res) => {
     res.render("five-lakes");
