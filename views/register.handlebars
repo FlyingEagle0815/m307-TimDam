@@ -3,7 +3,7 @@
 
 <body class="login-page">
   
-  <!-- HEADER -->
+  <!-- HEADER: Bindet den "header"-Partial in die aktuelle Vorlage ein. -->
   {{> header}}
 
   <!-- HINTERGRUNDBILD -->
@@ -13,10 +13,10 @@
 
   <div class="form-complete">
     <!-- TITEL -->
-    <h1>Login</h1>
+    <h1>Register</h1>
 
     <!-- FORMULAR -->
-    <form action="/login" enctype="multipart/form-data" method="post">
+    <form action="/register" enctype="multipart/form-data" method="post">
       <div class="input-group">
         <label>Username</label>
         <div class="input-container">
@@ -34,26 +34,18 @@
       </div>
 
       <div class="input-group">
-        <labe>E-Mail</label>
+        <label>E-Mail</label>
           <div class="input-container">
             <span class="icon">📧</span>
             <input type="E-Mail" name="E-Mail" placeholder="Your E-Mail" required/>
           </div>
       </div>
 
-      <input class="label-button solid" type="submit" value="→ LOGIN"/>
+      <input class="label-button solid" type="submit" value="→ SIGN UP"/>
     </form>
-
-    <!-- SPLIT -->
-    <div class="form-split">
-      <p>or</p>
-    </div>
-
-    <!-- SIGN UP -->
-    <a class="form-text-secondary" href="register">SIGN UP</a>
   </div>
 
-  <!-- FOOTER -->
+  <!-- FOOTER: Bindet den "footer"-Partial in die aktuelle Vorlage ein. -->
   {{> footer}}
 
 </body>

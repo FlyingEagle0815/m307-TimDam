@@ -6,8 +6,10 @@
     <img class="routes-intro-image" src="hero-image-routes-1440x400.jpg" alt="Mountains">    
     
     <!-- HEADER -->
-    {{> header}} <!-- Der Header bleibt unverändert -->
-    
+    <div id="white-header">
+    <!-- HEADER: Bindet den "header"-Partial in die aktuelle Vorlage ein. -->
+    {{> header}}
+    </div>
     <!-- TITEL -->
     <h1 class="title-routes left-page-margin">Routes</h1>
 </div>
@@ -60,5 +62,5 @@
     feather.replace();
 </script>
 
-<!-- FOOTER -->
+<!-- FOOTER: Bindet den "footer"-Partial in die aktuelle Vorlage ein. -->
 {{> footer}}

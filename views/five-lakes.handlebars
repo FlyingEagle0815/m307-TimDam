@@ -5,8 +5,8 @@
     <!-- HINTERGRUNDBILD -->
     <img class="routes-intro-image" src="hero-image-five-lakes-1440x400.jpg" alt="Mountains">    
     
-    <!-- HEADER -->
-    {{> header}} <!-- Der Header bleibt unverändert -->
+    <!-- HEADER: Bindet den "header"-Partial in die aktuelle Vorlage ein. -->
+    {{> header}}
 
     <!-- TITEL -->
     <h1 class="title-routes left-page-margin">Routes</h1>
@@ -69,7 +69,7 @@
     </div>
 </div>
 
-<!------- KOMMENTARE: TODO ------->
+<!------- KOMMENTARE ------->
 <p class="left-page-margin right-page-margin">Kommentare</p>
 
 <hr class="left-page-margin right-page-margin">
@@ -83,5 +83,5 @@
     feather.replace();
 </script>
 
-<!-- FOOTER -->
+<!-- FOOTER: Bindet den "footer"-Partial in die aktuelle Vorlage ein. -->
 {{> footer}}
