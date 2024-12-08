@@ -64,13 +64,13 @@ export function createApp(dbconfig) {
     res.render("account");
   });
 
-  // EDIT-ACCOUNT
-  // app.get("/edit-account", async (req, res) => {
-  //   const users = await pool.query("SELECT * FROM users WHERE id=$1", [
-  //     req.params.id,
-  //   ]);
-  //   res.render("edit-account", { users: users.rows[0] });
-  // });
+  // EDIT - ACCOUNT
+  app.get("/edit-account", async (req, res) => {
+    const users = await pool.query("SELECT * FROM users WHERE id=$1", [
+      req.params.id,
+    ]);
+    res.render("edit-account", { users: users.rows[0] });
+  });
 
   app.get("/edit-account", async function (req, res) {
     const user = await login.loggedInUser(req);

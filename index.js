@@ -18,14 +18,6 @@ app.get("/new_post", async function (req, res) {
   res.render("new_post", {});
 });
 
-// UPDATE (ACCOUNT)
-app.get("edit-account/:id", async function (req, res) {
-  const event = await app.locals.pool.query("SELECT * FROM users WHERE id=$1", [
-    req.params.id,
-  ]);
-  res.render("edit-account", { users: users.rows[0] });
-});
-
 // DELETE (ACCOUNT)
 app.get("/delete-account/:id", async function (res, req) {
   await app.local.pool.query("DELETE * FROM users WHERE id=$1", [
