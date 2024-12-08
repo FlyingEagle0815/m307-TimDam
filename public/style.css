@@ -67,9 +67,8 @@ hr {
 /* HEADER */
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-top: 60px;
+  padding-top: 40px;
 }
 
 /* NAVIGATION */
@@ -111,33 +110,137 @@ footer .copyright-footer {
 }
 
 /* HOME */
-.title-main {
+/* Allgemeine Einstellungen nur für die Startseite */
+.home-page {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Hintergrundbild für Inhalte (ausser Footer) */
+.content-wrapper {
+  background-image: url("background-image-home-1440x1024.jpg");
+  background-size: cover; /* Bild passt sich der Breite an */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; /* Stellt sicher, dass Inhalte innerhalb des Containers über dem Bild liegen */
+  z-index: 0;
+  padding-bottom: 2rem; /* Optional: Platz für Abstand zum Footer */
+}
+
+/* Inhalt innerhalb des Wrappers */
+.content-wrapper h1,
+.content-wrapper p,
+.content-wrapper button {
+  position: relative; /* Sicherstellen, dass diese Inhalte über dem Hintergrund erscheinen */
+  z-index: 1;
+  color: white; /* Textfarbe auf dem Hintergrund */
+}
+
+.home-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("background-image-home-1440x1024.jpg");
+  background-size: cover; /* Bild passt sich der Grösse des Bildschirms an */
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1; /* Hintergrundbild hinter allen Elementen */
+}
+
+/* Haupttitel */
+.home-page .title-main {
   font-size: 82px;
   font-weight: 900;
   line-height: 90px;
+  color: white;
+  margin: 25% 10% 5% 10%;
+  z-index: 1;
+  position: relative; /* Sicherstellen, dass der Text über dem Bild ist */
 }
 
-.title-description {
+/* Untertitel */
+.home-page .title-description {
   font-size: 26px;
   font-weight: 300;
   margin-bottom: 60px;
+  color: white;
+  z-index: 1;
+  position: relative;
 }
 
-.intro-image {
-  width: 100%;
-  height: auto;
+/* Button */
+.home-page button {
+  margin-top: 1.5rem;
+  margin-bottom: 10%;
+  padding: 0.8rem 1.5rem;
+  background-color: transparent; /* Transparentes Hintergrund */
+  border: 2px solid white; /* Weisse Umrandung */
+  border-radius: 40px;
+  color: white; /* Weisse Schrift */
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  transition: all 0.3s ease; /* Sanfter Übergang bei Hover */
+}
+
+/* Button-Link */
+.home-page button a {
+  text-decoration: none; /* Kein Unterstrich */
+  color: inherit; /* Vererbt die Farbe vom Button */
+  font-weight: bold;
+}
+
+/* Hover-Effekt */
+.home-page button:hover {
+  background-color: white; /* Weisser Hintergrund */
+  color: black; /* Schwarze Schrift */
+  border-color: white; /* Border bleibt weiss */
+}
+
+/* Bild-Styling entfernen (wird nicht mehr direkt verwendet) */
+.home-page .intro-image {
+  display: none; /* Das Bild wird durch das Hintergrundbild ersetzt */
+}
+
+/* Hintergrundbild für Footer ausschließen */
+.home-page footer {
+  position: relative;
+  z-index: 2; /* Footer wird über dem Hintergrundbild dargestellt */
 }
 
 /* ROUTES */
 .routes-hero {
-  margin-bottom: 70px;
+  position: relative; /* Der Container für das Bild */
+  height: 400px; /* Höhe des Containers */
+  margin-bottom: 70px; /* Abstand nach unten */
+}
+
+/* Hintergrundbild */
+.routes-hero img {
+  position: absolute; /* Das Bild wird als Hintergrund hinter dem Text platziert */
+  object-fit: cover;
+  z-index: -1; /* Das Bild bleibt hinter den Texten */
+}
+
+/* Titel über dem Bild */
+.routes-hero .title-routes {
+  color: white; /* Weisse Schriftfarbe */
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 62px;
+  margin-top: 170;
+  z-index: 1; /* Titel bleibt über dem Bild */
 }
 
 .title-routes {
   font-size: 64px;
   font-weight: 900;
   line-height: 62px;
-  /* color: #ffffff; */
 }
 
 .routes-buttons {
@@ -152,8 +255,8 @@ footer .copyright-footer {
 }
 
 .routes-intro-image {
-  width: 100vw;
-  height: auto;
+  width: 100%;
+  height: 400px;
 }
 
 .routes-card {
@@ -166,6 +269,17 @@ footer .copyright-footer {
   border: #333333 2px solid;
   border-radius: 30px;
   margin-bottom: 75px;
+}
+
+.routes-titles {
+  display: flex;
+  align-items: center;
+}
+
+.routes-titles hr {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
 }
 
 .card-img {
@@ -183,6 +297,7 @@ footer .copyright-footer {
 
 .card-button {
   margin-bottom: 35px;
+  padding: 10px 0px;
 }
 
 /* ROUTE */
@@ -249,17 +364,53 @@ footer .copyright-footer {
   margin: 75px 0;
 }
 
-/* ACCOUNT */
+/* FORM */
+body.login-page {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* BODY */
+body.login-page {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND IMAGE */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1002px;
+  z-index: -1;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* FORM */
 .form-complete {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 700px;
+  height: 600px;
   width: 590px;
   border: #333333 2px solid;
   border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 100px auto;
+  z-index: 1;
+  position: relative;
 }
 
 .form-complete form {
@@ -267,6 +418,7 @@ footer .copyright-footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .form-complete h1 {
@@ -276,28 +428,44 @@ footer .copyright-footer {
   margin: 60px 0 70px 0;
 }
 
-.form-complete label {
+.input-group {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.input-group label {
   font-size: 20px;
   font-weight: 900;
   color: #333333;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  display: block;
 }
 
-/* .form-complete input {
-  margin-bottom: 50px;
-} */
+.input-container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 5px;
+}
 
-.form-complete input::placeholder {
-  font-size: 20px;
-  font-weight: 300;
+.input-container .icon {
+  font-size: 18px;
+  margin-right: 10px;
   color: #9e9e9e;
 }
 
-.form-text-secondary {
-  font-size: 20px;
-  font-weight: 900;
+.input-container input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
   color: #333333;
-  text-decoration: none;
+  background-color: transparent;
+}
+
+.input-container input::placeholder {
+  font-size: 16px;
+  color: #9e9e9e;
 }
 
 .form-split p {

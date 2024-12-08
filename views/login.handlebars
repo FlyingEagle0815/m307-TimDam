@@ -1,41 +1,51 @@
 <!-- CSS -->
 <style>.current-page-account { font-weight: 900; }</style>
 
-<!-- HEADER -->
-{{> header}}
+<body class="login-page">
+  
+  <!-- HEADER -->
+  {{> header}}
 
-<div class="form-complete">
-  <!-- TITEL -->
-  <h1>Login</h1>
-
-  <!-- FORMULAR -->
-  <form action="/login" enctype="multipart/form-data" method="post">
-    <label>Username</label>
-    <input type="text" name="username" placeholder="Your username" required/><br/>
-
-    <label>Password</label>
-    <input type="password" name="password" placeholder="Your password" required/><br/>
-
-    <label>E-Mail</label>
-    <input type="email" name="email" placeholder="Your e-mail" required/>
-
-    <!-- <label>Profile-Picture</label>
-    <a href="/new_post">Upload</a> -->
-
-    <input class="label-button solid" type="submit" value="→ LOGIN"/>
-  </form>
-
-  <!-- SPLIT -->
-  <div class="form-split">
-    <p>or</p>
+  <!-- HINTERGRUNDBILD -->
+  <div class="background-image">
+    <img src="background-image-login-register-account-1440x1024.jpg" alt="Hintergrundbild mit grossem Berg">
   </div>
 
-  <!-- SIGN UP -->
-  <a class="form-text-secondary" href="register">SIGN UP</a>
-</div>
+  <div class="form-complete">
+    <!-- TITEL -->
+    <h1>Login</h1>
 
-<!-- HINTERGRUNDBILD -->
-<img class="intro-image" src="background-image-login-register-account-1440x1024.jpg" alt="Hintergrundbild mit grossem Berg"></div>
+    <!-- FORMULAR -->
+    <form action="/login" enctype="multipart/form-data" method="post">
+      <div class="input-group">
+        <label>Username</label>
+        <div class="input-container">
+          <span class="icon">👤</span>
+          <input type="text" name="username" placeholder="Your username" required/>
+        </div>
+      </div>
 
-<!-- FOOTER -->
-{{> footer}}
+      <div class="input-group">
+        <label>Password</label>
+        <div class="input-container">
+          <span class="icon">🔒</span>
+          <input type="password" name="password" placeholder="Your password" required/>
+        </div>
+      </div>
+
+      <input class="label-button solid" type="submit" value="→ LOGIN"/>
+    </form>
+
+    <!-- SPLIT -->
+    <div class="form-split">
+      <p>or</p>
+    </div>
+
+    <!-- SIGN UP -->
+    <a class="form-text-secondary" href="register">SIGN UP</a>
+  </div>
+
+  <!-- FOOTER -->
+  {{> footer}}
+
+</body>
